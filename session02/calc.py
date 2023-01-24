@@ -1,4 +1,3 @@
-# %%
 #How many seconds are there in 42 minutes 42 second?
 print('Question 1 answer:')
 print(42*60+42)
@@ -14,5 +13,3 @@ print("average pace per mile in minute")
 print(2562/16.1)
 print("speed in miles per hour")
 print(16.1/2562*60*60)
-
-
