@@ -1,6 +1,6 @@
 #Question 1
 print ("Q1.1: 5, integer")
-print ("Q1.2: Name Error")
+print ("Q1.2: Float") 
 print ("Q1.3: Name Error")
 print ("Q1.4: 3, integer")
 print ("Q1.5: true, boolean")

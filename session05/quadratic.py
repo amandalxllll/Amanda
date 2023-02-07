@@ -13,4 +13,4 @@ def quadratic(a,b,c):
     R2=  (-1 * b - sqrt(b**2-4*a*c))/2*a
     return R1,R2
 
-print(f'"The result is",{quadratic(a,b,c)}') #I tried to add 8.3f, but it says typeerrors
+print(f'"The result is",{quadratic(a,b,c)}') #I tried to add 8.3f to format, but it says typeerrors
