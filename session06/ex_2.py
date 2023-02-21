@@ -36,4 +36,11 @@ def polygon(t,length,n):
 
 polygon(t=leo,length=50,n=28)
 
+
+#Exercise 2.4
+
+def circle(t,r):
+    """
+    
+    """
 turtle.mainloop()

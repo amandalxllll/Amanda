@@ -1,3 +1,21 @@
+#Exercise 1.1
+def check_fermat(a, b, c, n):
+    """
+    check to see if Fernat's theorem work
+    """
+    if n <= 2:
+        print("Fermat theorem only work when n>2")
+    else:
+        if a**n + b**n == c**n:
+            print("Holy smokes, Fermat was wrong!")
+        else:
+            print("No, that doesn't work!")
+
+def main():
+    check_fermat(2,5,6,9)
+
+#Exercise 1.2
+
 a1 = input("Please input number a >>")
 b1 = input("Please input number b >>")
 c1 = input("Please input number c >>")

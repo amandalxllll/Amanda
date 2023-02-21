@@ -1,6 +1,6 @@
 import turtle
 
-leo = turtle.Turtle ()
+leo = turtle.turtle ()
 print (leo)
 
 leo.fd(100)

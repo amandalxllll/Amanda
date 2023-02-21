@@ -1,4 +1,5 @@
-import cmath #It succesfully runned for the first time but does not work for the second time; even if I format it
+import cmath  # It succesfully runned for the first time but does not work for the second time; even if I format it
+
 # Exercise 1
 r = 0
 for i in range(1, 11):
