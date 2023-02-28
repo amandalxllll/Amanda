@@ -26,14 +26,14 @@ def roll_dice(n=100):
     for i in range(n):
         random_number = random.randint(1, 6)
         result += random_number
-    avg = result/n
-    return result,avg
+    avg = result / n
+    return result, avg
 
 
 def repeat_simulation():
     for i in range(10):
         s, mean = roll_dice(100)
-        print(f'{s = }, {mean = }')
+        print(f"{s = }, {mean = }")
 
 
 def main():
