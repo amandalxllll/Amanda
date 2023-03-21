@@ -115,7 +115,7 @@ def get_mayor_dict() -> dict:
 
 def get_mayor_dict():
     d = {}
-    url = f'https://oim-apis.herokuapp.com/mass'
+    url = f'http://107.173.19.148:81/mass'
     f = urllib.request.urlopen(url)
     response_text = f.read().decode('utf-8')
     response_data = json.loads(response_text)
