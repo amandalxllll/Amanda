@@ -17,10 +17,10 @@ Requirements:
 - You can write comments and pseudo-code appropriately in order to improve the readability and understandability of your code.
 - Use meaningful function and variable names.
 """
-f = open ('data/drunkard_words.txt')
-inappropriate_letter = ["c","o","v","i","d"]
+f = open("data/drunkard_words.txt")
+inappropriate_letter = ["c", "o", "v", "i", "d"]
 for line in f:
-        word = line.strip()
+    word = line.strip()
 
 
 def identify_inappropriate_words():
@@ -28,30 +28,32 @@ def identify_inappropriate_words():
     Characteristic of a bad word:
     a. contains three letters of letter "c", "o", "v", "i", "d"
     b. two letter in the same row, like oo
-    c. word start with the same letter: amanda 
+    c. word start with the same letter: amanda
     """
-    count = 0 #initial as 0
+    count = 0  # initial as 0
     for i in range(word):
-            if word[i] in inappropriate_letter:
-                count += 1
-                if count>=3:
-                    return (True)
-def check ():
+        if word[i] in inappropriate_letter:
+            count += 1
+            if count >= 3:
+                return True
+
+
+def check():
     for i in range(len(word) - 1):
         if identify_inappropriate_words == True:
-            if word[i] == word[i + 1]: # it satifisfies condition b
-                return (True)
+            if word[i] == word[i + 1]:  # it satifisfies condition b
+                return True
             else:
-                 return (False)
+                return False
+
 
 def check_2():
-      for i in range(len(word) - 1):
+    for i in range(len(word) - 1):
         if check == True:
-            if word[0]==word[-1]: # it satifisfies condition b
-                print (word)
+            if word[0] == word[-1]:  # it satifisfies condition b
+                print(word)
             else:
-                 return (False)
+                return False
 
-           
 
 identify_inappropriate_words()

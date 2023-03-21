@@ -8,15 +8,15 @@ line = f.readline()
 print(line)
 
 
-# f = open('data/words.txt')
+f = open('data/words.txt')
 
-# number_of_words = 0
+number_of_words = 0
 
-# for line in f:
-#     word = line.strip()
-#     number_of_words += 1
+for line in f:
+   word = line.strip()
+   number_of_words += 1
 
-# print(number_of_words)
+print(number_of_words)
 
 
 def find_long_words():
@@ -61,7 +61,10 @@ def avoids(word, forbidden):
     """
     returns True if the given word does not use any of the forbidden letters
     """
-    pass
+    for letter in word:
+        if letter in forbidden:
+            return False
+    return True
 
 
 # print(avoids('Babson', 'abcde'))

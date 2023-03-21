@@ -11,7 +11,7 @@ def process_file(filename, skip_header=False):
     returns: map from each word to the number of times it appears.
     """
     hist = {}
-    fp = open(filename, encoding='UTF8')
+    fp = open(filename, encoding="UTF8")
 
     if skip_header:
         skip_gutenberg_header(fp)
@@ -19,17 +19,17 @@ def process_file(filename, skip_header=False):
     # strippables = string.punctuation + string.whitespace
     # via: https://stackoverflow.com/questions/60983836/complete-set-of-punctuation-marks-for-python-not-just-ascii
 
-    strippables = ''.join(
+    strippables = "".join(
         [chr(i) for i in range(sys.maxunicode) if category(chr(i)).startswith("P")]
     )
 
     for line in fp:
-        if line.startswith('*** END OF THIS PROJECT'):
+        if line.startswith("*** END OF THIS PROJECT"):
             break
 
-        line = line.replace('-', ' ')
+        line = line.replace("-", " ")
         line = line.replace(
-            chr(8212), ' '
+            chr(8212), " "
         )  # Unicode 8212 is the HTML decimal entity for em dash
 
         for word in line.split():
@@ -48,7 +48,7 @@ def skip_gutenberg_header(fp):
     fp: open file object
     """
     for line in fp:
-        if line.startswith('*** START OF THIS PROJECT'):
+        if line.startswith("*** START OF THIS PROJECT"):
             break
 
 
@@ -74,7 +74,7 @@ def most_common(hist, excluding_stopwords=False):
     hist: map from word to frequency
     returns: list of (frequency, word) pairs
     """
-    stopwords = process_file('data/stopwords.txt')
+    stopwords = process_file("data/stopwords.txt")
     res = []
     for word in hist:
         if excluding_stopwords:
@@ -86,23 +86,22 @@ def most_common(hist, excluding_stopwords=False):
     return res
 
 
-
 def print_most_common(hist, num=10):
     """Prints the most commons words in a histgram and their frequencies.
     hist: histogram (map from word to frequency)
     num: number of words to print
     """
     t = most_common(hist)
-    print ('The most common words are:')
+    print("The most common words are:")
     for freq, word in t[:num]:
-        print (word, freq)
+        print(word, freq)
 
 
 def subtract(d1, d2):
     """Returns a dictionary with all keys that appear in d1 but not d2.
     d1, d2: dictionaries
     """
-    sub={}
+    sub = {}
     for key in d1:
         if key not in d2:
             sub[key] = None
@@ -121,15 +120,15 @@ def random_word(hist):
 
 
 def main():
-    hist = process_file('data/Pride and Prejudice.txt', skip_header=True)
+    hist = process_file("data/Pride and Prejudice.txt", skip_header=True)
     # print(hist)
-    print('Total number of words:', total_words(hist))
-    print('Number of different words:', different_words(hist))
+    print("Total number of words:", total_words(hist))
+    print("Number of different words:", different_words(hist))
 
     t = most_common(hist, excluding_stopwords=True)
-    print('The most common words are:')
+    print("The most common words are:")
     for freq, word in t[0:20]:
-        print(word, '\t', freq)
+        print(word, "\t", freq)
 
     # words = process_file('words.txt', skip_header=False)
 
@@ -143,5 +142,5 @@ def main():
     #     print(random_word(hist), end=' ')
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
