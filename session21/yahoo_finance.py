@@ -102,7 +102,7 @@ def download_page(url):
 def parse_html(html):
     
     Analyze the html page, find the information and return the list of tuples (stock_name, symbol, price, change, change_percent, volume, market_cap)
-  
+  ss
     soup = BeautifulSoup(html, 'html.parser')
     stock_table = soup.find('tbody')
     stock_list = []

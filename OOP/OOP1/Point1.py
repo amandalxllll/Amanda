@@ -14,12 +14,21 @@ class Human:
     """
     attributes: name, age, 
     """
-    def __init__(self,name,age):
+    def __init__(self,name,age,weight):
         self.name =name
         self.age = age
-
+        self.weight = weight
     def __str__(self):
         return f'Name:{self.name},Age:{self.age,},Weight"{self.weight}'
+    def speak(self):
+        """
+        print something related this human
+        """
+
+    def is_older_than(self,another_human):
+        """
+        Return 
+        """
 
 
 # kydell = Human () #creating an instance of Human type
@@ -29,7 +38,7 @@ class Human:
 # john = Human()
 # john.name = 'John'
 # john.age = 21
-kydell = Human('Keydall',22)
-john = Human("John",21)
+kydell = Human('Keydall',22,150)
+john = Human("John",21,150)
 
 print(kydell.name)
